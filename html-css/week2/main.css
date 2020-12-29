@@ -1,0 +1,379 @@
+/*
+COLORS
+
+gray: #fafafa;
+purple: #6736cd;
+white: 	#ffffff;
+letter gray: #969696;
+purple hover: #6924FF;
+
+Titles: 'Open Sans', sans-serif;
+Body: 'Roboto', sans-serif;
+
+*/
+
+/* ERICK MEYERS RESET http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*GENERAL*/
+
+body {
+  background-color: #ffffff;
+  color: black;
+}
+
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-bottom: 21px;
+}
+
+h5 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-bottom: 21px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*MAIN TITLE*/
+
+.main-title {
+  background-color: #fafafa;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: solid 0.5px#EFF0F4;
+}
+
+.main-title p {
+  font-family: "Roboto", sans-serif;
+  color: #969696;
+  font-size: 20px;
+}
+
+/*NAVBAR*/
+
+nav ul {
+  margin: 30px 0;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.nav-link.active {
+  color: #969696;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: #969696;
+}
+
+/*MAIN IMAGE*/
+
+.main-img {
+  width: 100%;
+}
+
+/*ARTICLES*/
+
+.art-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+article {
+  margin-top: 50px;
+}
+
+.left-article {
+  width: 35%;
+}
+
+.left-article p {
+  font-size: 14px;
+}
+
+.right-article {
+  width: 55%;
+}
+
+.right-article p {
+  font-size: 18px;
+}
+
+article p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #969696;
+}
+
+/*LOGOS*/
+.logo-article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo-cont {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/*FOOTER*/
+
+footer {
+  background-color: #6736cd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  box-sizing: content-box;
+  width: 20%;
+  color: white;
+  padding: 80px 0;
+}
+
+footer p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+.footer-column ul li {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  border-bottom: thin solid #969696;
+  padding: 20px 0;
+}
+
+#sublink {
+  padding-left: 15px;
+}
+
+.footer-map {
+  width: 100%;
+  height: 70%;
+}
+
+.footer-column ul li:hover {
+  cursor: pointer;
+  background-color: #6924ff;
+}
+
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 1000px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .art-container {
+    flex-wrap: wrap;
+  }
+
+  .left-article,
+  .right-article {
+    width: 100%;
+  }
+
+  .logo-article {
+    flex-wrap: wrap;
+  }
+
+  .logo-cont {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column iframe,
+  .footer-column p,
+  .footer-column ul {
+    padding-left: 15px;
+  }
+}
