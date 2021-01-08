@@ -1,0 +1,464 @@
+/**
+COLORS
+logo:#c75c5c;
+pink: #BF5A5A;
+darker: #A65151
+lighter: #D98B8B;
+white: #F2F2F2;
+black:#0D0D0D
+
+FONTS::afterfont-family: 'Lilita One', cursive;
+font-family: 'Quicksand', sans-serif;
+
+*/
+
+/* ERICK MEYERS RESET http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*GENERAL*/
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 10px 150px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: "Lilita One", cursive;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #a65151;
+}
+
+h2 {
+  font-family: "Lilita One", cursive;
+  font-size: 24px;
+  margin: 25px 0 10px;
+  color: #a65151;
+}
+
+h3 {
+  font-family: "Lilita One", cursive;
+  font-size: 22px;
+  margin: 25px 0 10px;
+  color: #a65151;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+}
+
+label,
+input,
+option,
+select {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+
+/*HEADER*/
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c75c5c;
+}
+
+.nav-options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.nav-link {
+  font-family: "Quicksand", sans-serif;
+  color: #f2f2f2;
+}
+
+.logo {
+  width: 5%;
+  border: solid #f2f2f2;
+  border-radius: 50%;
+}
+
+.nav-link:hover {
+  color: #d98b8b;
+}
+
+/*FORM*/
+
+.text-container {
+  width: clamp(20ch, 100%, 100ch);
+}
+
+.inputs-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+form {
+  border: solid #bf5a5a;
+  border-radius: 12px;
+  padding: 20px 0;
+}
+
+.one {
+  width: 50%;
+}
+
+/*FIELDS*/
+.field {
+  display: flex;
+  width: 47%;
+  padding: 20px 0;
+}
+
+.field input,
+.field select {
+  flex: 1;
+  width: 50%;
+}
+
+.field label {
+  display: flex;
+  width: 25%;
+  flex: 1;
+}
+
+.description {
+  display: flex;
+  width: 100%;
+  padding-bottom: 15px;
+}
+.description label {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.description input {
+  flex: 1;
+}
+
+textarea {
+  vertical-align: top;
+  flex: 1;
+}
+
+.label-description {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.user-check {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-check label {
+  width: 140px;
+  padding: 20px 0;
+}
+
+.user-check input {
+  width: 20px;
+}
+
+.news {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.news label {
+  text-align: right;
+}
+
+/*PROGRESS BAR*/
+
+.progress-bar {
+  background-color: #f2f2f2;
+  display: inline-block;
+  width: 100%;
+  overflow-x: hidden;
+  animation: moveInRight 2s ease-in 250ms;
+}
+
+progress {
+  width: 100%;
+  display: inline-block;
+  height: 25px;
+}
+
+.p-label {
+  width: 100%;
+  display: inline-block;
+  height: 25px;
+}
+
+progress[value] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #f2f2f2;
+}
+
+.start progress[value]::-webkit-progress-value {
+  background-color: #d98b8b;
+}
+
+.middle progress[value]::-webkit-progress-value {
+  background-color: #bf5a5a;
+}
+
+.end progress[value]::-webkit-progress-value {
+  background-color: #a65151;
+}
+
+@keyframes moveInRight {
+  0% {
+    text-indent: -100%;
+  }
+
+  100% {
+    text-indent: 0;
+  }
+}
+
+/*BUTTON*/
+
+button {
+  padding: 10px 50px;
+  margin: 25px 0;
+  background-color: #a65151;
+  border-radius: 12px;
+  color: #f2f2f2;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #d98b8b;
+}
+
+.button-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*ITEMS*/
+.items {
+  width: 70%;
+}
+
+/*STYLE IMAGES*/
+.style-container {
+  margin: 15px 0;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.style-image {
+  grid-column: 1fr;
+  text-align: center;
+}
+
+.style-image img {
+  width: 150px;
+  height: 200px;
+  display: block;
+  margin: 15px auto;
+}
+
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 1150px) {
+  .nav-options {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 15%;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .field,
+  .description {
+    width: 100%;
+  }
+
+  .button {
+    flex-direction: column;
+  }
+
+  .button a {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .style-image {
+    grid-column: 2/4;
+  }
+  .style-image img {
+    width: 100%;
+    height: auto;
+  }
+  .button-submit {
+    justify-content: center;
+  }
+}
