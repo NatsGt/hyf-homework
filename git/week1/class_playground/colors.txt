@@ -1,3 +1,7 @@
+Orange
 pink
 black
+<<<<<<< HEAD
 Orange
+=======
+>>>>>>> 997ae157fb322bf3fb62e2e87264c596f6cdd2f2
