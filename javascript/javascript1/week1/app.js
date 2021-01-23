@@ -4,13 +4,13 @@
 //STEP 3
 
 /*Age-ify*/
-var yearOfBirth = 1987; 
+const yearOfBirth = 1987; 
 var yearFuture =  2027;
 var age = yearFuture - yearOfBirth;
 console.log("You will be " + age + " years old in " + yearFuture + ".");
 
 /*Goodboy-Oldboy */
-var dogYearOfBirth = 2020;
+const dogYearOfBirth = 2020;
 var dogYearFuture = 2030;
 var dogYear = dogYearFuture - dogYearOfBirth;
 var shouldShowResultInDogYearsld = true;
@@ -45,7 +45,7 @@ var volumeInMeters = houseDepth * houseWidth * houseHeight;
 var housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 var friendPayment = 2500000;
 
-if(housePrice - friendPayment < 0){
+if(housePrice < friendPayment){
     console.log("He/she is overpaying, the price should be " + housePrice);
 }else{
     console.log("He/she is underpaying, the price should be " + housePrice);
@@ -60,14 +60,14 @@ volumeInMeters = houseDepth * houseWidth * houseHeight;
 housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 friendPayment = 1000000;
 
-if(housePrice - friendPayment < 0){
+if(housePrice < friendPayment){
     console.log("He/she is overpaying, the price should be " + housePrice);
 }else{
     console.log("He/she is underpaying, the price should be " + housePrice);
 }
 
 /*Ex Namey*/
-var firstWords = ["Forward", "Legend", "Good", "Waking", "Starting", "Vision", "Great", "Success", "Conquer", "Happy" ];
-var secondWords = ["Company", "Place", "Stay", "Oasis", "Career", "Ahead", "Future", "Colleague", "Dream", "Corporation"];
-var startupName = firstWords[Math.floor(Math.random() * 10)] + " " + secondWords[Math.floor(Math.random() * 10)];
+const firstWords = ["Forward", "Legend", "Good", "Waking", "Starting", "Vision", "Great", "Success", "Conquer", "Happy" ];
+const secondWords = ["Company", "Place", "Stay", "Oasis", "Career", "Ahead", "Future", "Colleague", "Dream", "Corporation"];
+var startupName = firstWords[Math.floor(Math.random() * firstWords.length)] + " " + secondWords[Math.floor(Math.random() * secondWords.length)];
 console.log(startupName);
