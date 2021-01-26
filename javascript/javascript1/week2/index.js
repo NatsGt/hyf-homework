@@ -32,7 +32,7 @@ console.log(fullname2);
 
 //EVENT APPLICATION
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var today = new Date();
+const today = new Date();
 
 function getEventWeekday(day) {
     var future = (today.getDay() + day) % 7;
