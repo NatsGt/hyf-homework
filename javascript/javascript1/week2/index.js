@@ -48,24 +48,23 @@ console.log(getEventWeekday(5));
  temperature 18 -25 - shorts and t-shirt
  temperature > 25 short, flipflops, light shirt */
  function showTodaysOutfit(temperature) {
-    switch (true) {
-        case (temperature < 0):
-            return "winter jacket, mittens and scarf";
-            break;
-        case (temperature >= 0 && temperature < 10):
-            return "jacket and mittens";
-            break
-        case (temperature >= 10 && temperature < 18):
-            return "sweater and jeans";
-            break
-        case (temperature >= 18 && temperature < 25):
-            return "shorts and t-shirt";
-            break
-        default:
-            return "short, flipflops, light shirt"
-            break;
-    }
-     
+    var outfit;
+        if (temperature < 0){
+            outfit = "winter jacket, mittens and scarf";
+            return outfit;
+        }else if(temperature >= 0 && temperature < 10){
+            outfit = "jacket and mittens";
+            return outfit;
+        }else if(temperature >= 10 && temperature < 18){
+            outfit = "sweater and jeans";
+            return outfit;
+        }else if(temperature >= 18 && temperature < 25){
+            outfit = "shorts and t-shirt";
+            return outfit;
+        }else{
+            outfit = "short, flipflops, light shirt";
+            return outfit;
+        }   
  }
 
  const clothesToWear = showTodaysOutfit(25);
