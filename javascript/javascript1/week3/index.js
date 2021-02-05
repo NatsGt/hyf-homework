@@ -16,11 +16,9 @@ const nameToRemove = "Ahmad";
 
 // Write some code here
 function removeName(name) {
-  for (let i = 0; i < names.length; i++) {
-    if (names[i] === name) {
-      names.splice(i, 1);
-    }
-  }
+const nameToRemove = "Ahmad";
+const index = names.indexOf(nameToRemove);
+names.splice(index, 1);
 }
 
 removeName(nameToRemove);
@@ -267,7 +265,6 @@ function sortArray(actArray) {
 }
 
 sortArray(activities);
-
 
 
 
