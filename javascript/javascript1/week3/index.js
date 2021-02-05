@@ -101,8 +101,8 @@ const notes = [];
 
 function saveNote(content, id) {
   const noteObj = {
-    "content": content,
-    "id": id
+    content,
+    id
   };
   notes.push(noteObj);
 }
@@ -265,5 +265,4 @@ function sortArray(actArray) {
 }
 
 sortArray(activities);
-
 
