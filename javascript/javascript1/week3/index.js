@@ -37,7 +37,7 @@ function calcTime(obj) {
   let time = obj.destinationDistance / obj.speed;
   let hour = Math.floor(time);
   let minutes = Math.floor((time - Math.floor(time)) * 60);
-  let timeFormat = hour + (hour <= 1 ? " hour and " : " hours and ") + minutes + (minutes <= 1 ? " minute." : " minutes.");
+  let timeFormat = hour + (hour <= 1 ? " hour" : " hours") + " and " + minutes + (minutes <= 1 ? " minute." : " minutes.");
   return timeFormat;
 }
 
@@ -265,6 +265,5 @@ function sortArray(actArray) {
 }
 
 sortArray(activities);
-
 
 
