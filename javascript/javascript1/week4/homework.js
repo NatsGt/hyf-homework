@@ -4,27 +4,27 @@ var user = {
     "toDoList": []
 };
 function getReply(command) {
-    let voiceCom = command;
+    let voiceCom = command.toLowerCase();
     let start = 0;
     let end = 0;
     let todo = "";
     if (voiceCom.includes("my name is")) {
         start = voiceCom.indexOf("is") + 3;
-        user.name = voiceCom.slice(start);
+        user.name = command.slice(start);
         return "Welcome " + user.name + "!";
-    } else if (voiceCom.includes("What") && voiceCom.includes("my name")) {
+    } else if (voiceCom.includes("what") && voiceCom.includes("my name")) {
         if (user.name != undefined) {
             return "Your name is " + user.name;
         }
         return "Sorry, I still don't know who you are.";
-    } else if (voiceCom.includes("Add") && voiceCom.includes("todo")) {
-        start = voiceCom.indexOf("Add") + 4;
+    } else if (voiceCom.includes("add") && voiceCom.includes("todo")) {
+        start = voiceCom.indexOf("add") + 4;
         end = voiceCom.indexOf("to my todo")
         todo = voiceCom.slice(start, end)
         user.toDoList.push(todo);
         return todo + "added to your To Do List.";
-    } else if (voiceCom.includes("Remove") && voiceCom.includes("todo")) {
-        start = voiceCom.indexOf("Remove") + 7;
+    } else if (voiceCom.includes("remove") && voiceCom.includes("todo")) {
+        start = voiceCom.indexOf("remove") + 7;
         end = voiceCom.indexOf("from my todo");
         todo = voiceCom.slice(start, end);
         let index = user.toDoList.indexOf(todo);
@@ -35,13 +35,13 @@ function getReply(command) {
             return "I couldn't find " + todo + "in your To Do List."
         }
 
-    } else if (voiceCom.includes("What") && voiceCom.includes("todo")) {
+    } else if (voiceCom.includes("what") && voiceCom.includes("todo")) {
         if (user.toDoList.length === 0) {
             return "Your To Do List is empty. Add some tasks.";
         } else {
             return user.toDoList;
         }
-    } else if (voiceCom.includes("What") && voiceCom.includes("day") && voiceCom.includes("today")) {
+    } else if (voiceCom.includes("what") && voiceCom.includes("day") && voiceCom.includes("today")) {
         const date = new Date();
         let day = date.toLocaleDateString('en-GB', { day: 'numeric' });
         let month = date.toLocaleDateString('en-GB', { month: 'long' });
@@ -82,25 +82,23 @@ function getReply(command) {
 
         return "Timer set for " + time + " " + timeReq;
 
-    } else if (voiceCom.includes("What") && voiceCom.includes("time is")) {
+    } else if (voiceCom.includes("what") && voiceCom.includes("time is")) {
         const date = new Date();
         let hour = date.getHours();
         let minutes = date.getMinutes();
         let time = "The time is " + hour + (hour > 1 ? " hours" : " hour") + " with " + minutes + (minutes > 1 ? " minutes" : " minute");
         return time;
-    } else if (voiceCom.includes("What") && voiceCom.includes("your name")) {
+    } else if (voiceCom.includes("what") && voiceCom.includes("your name")) {
         return "Guess it! Hint: Is not Siri or Alexa."
     } else {
         return "I can't help you with that for the moment."
     }
-
-
-
 }
 
 console.log(getReply("Hello my name is John"));
 console.log(getReply("Hello my name is Joaquin"));
 console.log(getReply("What is my name?"));
+console.log(getReply("Hey there!, what is my name?"));
 console.log(getReply("Add fishing to my todo"));
 console.log(getReply("Add laundry to my todo"));
 console.log(getReply("Add singing in the shower to my todo"));
