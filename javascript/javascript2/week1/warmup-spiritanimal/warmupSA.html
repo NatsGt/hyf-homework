@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="warmupSA.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="form">
+        <h1>GET YOUR SPIRIT ANIMAL NOW!</h1>
+        <h3>Select the trigger method (if you dare)</h3>
+        <div class="select">
+          <label for="press">Press Button</label>
+          <input
+            type="radio"
+            name="option"
+            id="press"
+            value="press button"
+            checked
+          />
+          <label for="hover">Hover Button</label>
+          <input type="radio" name="option" id="hoverB" value="hover button" />
+          <label for="input">Hover Input</label>
+          <input type="radio" name="option" id="hoverI" value="hover input" />
+          <label for="input">Write Input</label>
+          <input type="radio" name="option" id="hoverI" value="write input" />
+        </div>
+
+        <div class="input">
+          <label for="name">Your name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="buttons">
+          <button type="submit" id="submit">Submit</button>
+          <button type="button" class="tryAgain">Try Again!</button>
+        </div>
+        <p id="displayAnimal"></p>
+      </div>
+    </div>
+    <script src="warmupSA.js"></script>
+  </body>
+</html>
