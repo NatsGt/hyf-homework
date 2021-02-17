@@ -8,12 +8,13 @@ function renderProducts(products) {
         let myProduct = document.createElement("li");
         let myPrice = document.createElement("li");
         let myRating = document.createElement("li");
+        let myUl = document.querySelector(".my-ul");
         myProduct.innerHTML = "<h2>" + product.name + "</h2>";
-        document.querySelector(".my-ul").appendChild(myProduct);
+        myUl.appendChild(myProduct);
         myPrice.innerHTML = "Price: " + product.price;
-        document.querySelector(".my-ul").appendChild(myPrice);
+        myUl.appendChild(myPrice);
         myRating.innerHTML = "Rating: " + product.rating;
-        document.querySelector(".my-ul").appendChild(myRating);
+        myUl.appendChild(myRating);
     });
 }
 

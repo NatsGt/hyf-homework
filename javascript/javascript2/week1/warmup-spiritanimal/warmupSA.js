@@ -86,7 +86,6 @@ function tryAgain(option) {
     } else {
         alert('Insert a name and press "Submit"');
     }
-
 }
 
 function activateInput(option) {
@@ -106,7 +105,6 @@ function activateInput(option) {
 function selectRadio() {
     var option = document.querySelector('input[name="option"]:checked').value;
     return option;
-
 }
 
 //click button
