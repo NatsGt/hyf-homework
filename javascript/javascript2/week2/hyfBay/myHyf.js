@@ -3,6 +3,8 @@ console.log("Script loaded");
 const products = getAvailableProducts();
 console.log(products);
 
+let myUl = document.querySelector(".my-ul");
+
 //render products
 function renderProducts(products) {
     products.forEach(product => {
@@ -11,7 +13,6 @@ function renderProducts(products) {
         let myProduct = document.createElement("li");
         let myPrice = document.createElement("li");
         let myRating = document.createElement("li");
-        let myUl = document.querySelector(".my-ul");
         myProduct.innerHTML = "<h2>" + product.name + "</h2>";
         myDiv.appendChild(myProduct);
         myPrice.innerHTML = "Price: " + product.price;
