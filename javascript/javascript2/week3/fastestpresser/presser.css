@@ -1,0 +1,123 @@
+/*
+FONTS 
+font-family: 'Pacifico', cursive;
+font-family: 'Quicksand', sans-serif;
+
+COLORS
+Blue: #120078;
+Purple: #9d0191;
+Pink: #fd3a69;
+Yellow: #fecd1a;
+*/
+
+/*GENERAL*/
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #120078;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*Container*/
+
+.main-container {
+  width: 50%;
+  display: inline-block;
+  background-color: #fd3a69;
+}
+
+.input-container {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keys-container {
+  display: flex;
+  height: 300px;
+}
+.s-container,
+.l-container {
+  width: 50%;
+  background-color: #fecd1a;
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.s-container {
+  border-right: solid #fd3a69;
+}
+
+/*MAIN-CONTAINER*/
+
+h1 {
+  margin: 15px;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 42px;
+  color: #120078;
+}
+
+/*INPUT CONTAINER*/
+#time,
+#submit {
+  font-family: "Quicksand", sans-serif;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#time {
+  width: 25%;
+  padding: 5px;
+  border: #fff;
+}
+
+#submit {
+  width: 25%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #9d0191;
+  border: #9d0191;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: #9e2994;
+}
+
+#result {
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  color: #120078;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+/*KEYS-CONTAINER*/
+
+.active {
+  background-color: #fecd1ace;
+  color: #fff;
+}
+
+.s-count,
+.l-count {
+  font-size: 20px;
+}
