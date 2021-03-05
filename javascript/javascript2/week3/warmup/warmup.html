@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="warmup.css" />
+    <title>Warmup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub-container">
+        <h2>Delay button</h2>
+        <button class="exercise-3 my-button">Click Me</button>
+      </div>
+
+      <div class="location-container">
+        <div class="sub-container">
+          <h2>Get your location</h2>
+          <button class="location-button my-button">Location</button>
+        </div>
+        <div class="sub-container-2">
+          <span class="location-result">
+            <p class="location-result1"></p>
+            <p class="location-result2"></p>
+          </span>
+        </div>
+      </div>
+      <div class="sub-container">
+        <h2>Show your location in Google Maps</h2>
+        <button class="google-button my-button">Google Locate</button>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <!--Google Maps-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj6hoJXyAgti0t1IUnPX3duS2vtvOEsN8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <!--My JS file-->
+    <script src="warmup.js"></script>
+  </body>
+</html>

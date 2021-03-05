@@ -1,0 +1,65 @@
+/*Colors 
+Blue: #28527a
+Lightblue: #8ac4d0
+Mustard: #f4d160;
+Yellow: #fbeeac;
+*/
+
+/*General*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  color: #28527a;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/*Containers*/
+.container {
+  background-color: #8ac4d0;
+  height: 80%;
+  width: 80%;
+  padding: 3rem;
+  text-align: center;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.sub-container-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.location-result {
+  background-color: #f4d160;
+  height: 100px;
+  width: 400px;
+}
+
+/*Buttons*/
+.my-button {
+  background-color: #28527a;
+  color: #fff;
+}
+/*Map*/
+
+#map {
+  margin: 0 auto;
+  height: 40%;
+  width: 100%;
+}
