@@ -28,17 +28,19 @@
         <p id="result"></p>
       </div>
       <div class="keys-container">
-        <span class="s-container">
+        <div class="s-container">
+          <canvas id="s-canvas"></canvas>
           <p>Press S</p>
           <p class="s-count"></p>
-        </span>
-        <span class="l-container">
+        </div>
+        <div class="l-container">
+          <canvas id="l-canvas"></canvas>
           <p>Press L</p>
           <p class="l-count"></p>
-        </span>
+        </div>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
     <!--JS File-->
     <script src="presser.js"></script>
   </body>

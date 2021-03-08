@@ -26,8 +26,10 @@ button.addEventListener("click", () => {
     setTimeout(() => {
         if (countS > countL) {
             res = "S is the winner";
+            confettiCreator("s-canvas")
         } else if (countS < countL) {
             res = "L is the winner";
+            confettiCreator("l-canvas")
         } else if (countS === 0 && countL === 0) {
             res = "None key pressed :("
         } else {
@@ -82,6 +84,14 @@ function showActive(activeClass) {
     setTimeout(() => {
         thisSpan.classList.remove("active");
     }, 100);
+}
+
+//confetti
+function confettiCreator(canvasId) {
+    console.log(canvasId);
+    var confettiSettings = { target: canvasId };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
 }
 
 

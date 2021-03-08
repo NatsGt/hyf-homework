@@ -49,6 +49,7 @@ p {
 }
 .s-container,
 .l-container {
+  position: relative;
   width: 50%;
   background-color: #fecd1a;
   font-family: "Quicksand", sans-serif;
@@ -120,4 +121,14 @@ h1 {
 .s-count,
 .l-count {
   font-size: 20px;
+}
+
+/*Confetti*/
+
+#s-canvas,
+#l-canvas {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
