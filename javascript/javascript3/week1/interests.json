@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "The Japanese Lover",
+    "author": "Isabel Allende",
+    "genre": "Latinamerican novel",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51wpZ1sGPsL._SX335_BO1,204,203,200_.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "genre": "Victorian novel",
+    "img": "https://images.cdn3.buscalibre.com/fit-in/360x360/9b/4d/9b4d0c92dd7e99db4cfafad1cc33c5a8.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Crime and Punishment",
+    "author": "Fiodor Dostoyevski",
+    "genre": "Novel",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/81b6e-dc41L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Love in the Time of Cholera",
+    "author": "Gabriel Garcia Marquez",
+    "genre": "Magic realism",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51hR1SC1-gL._SX324_BO1,204,203,200_.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genre": "Novel",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SX281_BO1,204,203,200_.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Novel",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL._SX331_BO1,204,203,200_.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Carazamba",
+    "author": "Virgilio Rodriguez Macal",
+    "genre": "Adventure",
+    "img": "https://diariodelgallo.files.wordpress.com/2011/02/carazamba.jpg?w=584"
+  },
+  {
+    "id": 8,
+    "title": "Migrante",
+    "author": "Marcos Antil",
+    "genre": "Biography",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/61FwtrDIHJL.jpg"
+  },
+  {
+    "id": 9,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Distopic novel",
+    "img": "https://m.media-amazon.com/images/I/51L+QipqfaL.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The President",
+    "author": "Miguel Angel Asturias",
+    "genre": "Political novel",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51t+Z6KA0hL._SX314_BO1,204,203,200_.jpg"
+  }
+]

@@ -1,0 +1,91 @@
+/*STYLE
+COLOR PALETTE
+Purple: #440047;
+Pink: #e11d74;
+Green: #91d18b;
+light pink: #fbecec;
+
+FONTS
+font-family: 'Amatic SC', cursive;
+font-family: 'Josefin Sans', sans-serif;
+
+*/
+
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*General*/
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e11d74;
+}
+
+h1 {
+  font-family: "Amatic SC", cursive;
+  color: #440047;
+  font-size: 60px;
+}
+
+/*Containers*/
+
+.main-container {
+  background-color: #fbecec;
+  min-height: 80vh;
+  width: 80%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.giphs-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+}
+
+/*Inputs and button*/
+
+.giph-input {
+  background-color: #e11d74;
+  color: #fbecec;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  margin: 5px 0;
+  width: 100px;
+}
+
+::placeholder {
+  color: #fbecec;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.giph-button {
+  background-color: #91d18b;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  width: 120px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.giph-button:hover {
+  cursor: pointer;
+  background-color: #91d18bd3;
+}
