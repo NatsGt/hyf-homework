@@ -147,6 +147,7 @@ button:focus {
   .title {
     align-self: center;
     font-size: 42px;
+    grid-column: 1/4;
   }
   .temperature {
     justify-self: center;
