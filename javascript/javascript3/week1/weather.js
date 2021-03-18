@@ -25,10 +25,10 @@ fetch('https://pokeapi.co/api/v2/')
 //WEATHER API
 
 //Global variables
-let inputLocation = document.getElementById("location");
-let cityButton = document.getElementById("submit-city");
-let locationButton = document.getElementById("user-location");
-let clearButton = document.getElementById("clear-history")
+const inputLocation = document.getElementById("location");
+const cityButton = document.getElementById("submit-city");
+const locationButton = document.getElementById("user-location");
+const clearButton = document.getElementById("clear-history")
 let map;
 const weatherContainer = document.querySelector(".container");
 const weatherInfo = document.querySelector(".weather");
@@ -98,8 +98,9 @@ function showWeather(dataFromApi) {
 }
 
 function error() {
-    console.log("Unable to get your location");
+    alert("Unable to get your location");
 }
+
 function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -149,7 +150,6 @@ cityButton.addEventListener("click", () => {
     fetch(weatherAddress)
         .then(response => response.json())
         .then(weatherData => {
-            console.log(weatherData);
             //Check if city exist
             if (weatherData.cod === "404") {
                 alert(weatherData.message);
@@ -167,7 +167,6 @@ locationButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
     localStorage.clear();
-    console.log(citySaved);
     weatherContainer.classList.add("hide");
 })
 

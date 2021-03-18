@@ -15,21 +15,26 @@
   <body>
     <div class="main-container">
       <h1>Giphy searcher</h1>
-      <input
-        type="text"
-        name="giphSearch"
-        id="giph-search"
-        class="giph-input"
-        placeholder="Search*"
-      />
-      <button type="submit" id="submit" class="giph-button">Show Giphs</button>
-      <input
-        type="number"
-        name="giphLimit"
-        id="giph-limit"
-        class="giph-input"
-        placeholder="Number"
-      />
+      <div class="inputs-container">
+        <input
+          type="text"
+          name="giphSearch"
+          id="giph-search"
+          class="giph-input"
+          placeholder="Search*"
+        />
+        <input
+          type="number"
+          name="giphLimit"
+          id="giph-limit"
+          class="giph-input"
+          placeholder="Number"
+        />
+        <button type="submit" id="submit" class="giph-button">
+          Show Giphs
+        </button>
+      </div>
+
       <div class="giphs-container"></div>
     </div>
     <!--JS Link-->

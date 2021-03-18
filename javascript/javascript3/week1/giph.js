@@ -1,19 +1,21 @@
 //Global variable
-let submitButton = document.getElementById("submit");
-let userSearch = document.getElementById("giph-search");
-let giphLimit = document.getElementById("giph-limit");
-let giphContainer = document.querySelector(".giphs-container");
-let apiKey = "LdnkOiyC9ZNEs31lQgQyfUWR34FAhid6";
-
+const submitButton = document.getElementById("submit");
+const userSearch = document.getElementById("giph-search");
+const giphLimit = document.getElementById("giph-limit");
+const giphContainer = document.querySelector(".giphs-container");
+const apiInputs = {
+    apiKey: "LdnkOiyC9ZNEs31lQgQyfUWR34FAhid6",
+    apiLimit: "",
+}
 
 //functions
 function showGiph(source,) {
-    let giphImg = document.createElement("img");
+    const giphImg = document.createElement("img");
     giphImg.src = source;
     giphContainer.appendChild(giphImg);
 }
 
-function displayNChild(element, limit, total) {
+/* function displayNChild(element, limit, total) {
     for (let i = 0; i < total; i++) {
         if (i < limit) {
             element.item(i).style.display = "block"
@@ -21,50 +23,67 @@ function displayNChild(element, limit, total) {
             element.item(i).style.display = "none"
         }
     }
+} */
+
+function fetchApi(search, limit) {
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiInputs.apiKey}&q=${search}&limit=${limit}&offset=0&rating=g&lang=en`)
+        .then(response => response.json())
+        .then(giphData => {
+            giphData.data.forEach(giph => {
+                let thisSource = giph.images.original.url;
+                showGiph(thisSource)
+            });
+        });
 }
 
-submitButton.addEventListener("click", () => {
-    let querySearch = userSearch.value;
-    let divImgs = giphContainer.childElementCount;
+function checkInputs() {
+    apiInputs.querySearch = userSearch.value;
+    //check for text in input
+    if (!userSearch.value) {
+        return alert("Write in search!");
+    }
+    //check for numbers in the limit input
+    if (giphLimit.value) {
+        apiInputs.apiLimit = giphLimit.value;
+    } else {
+        apiInputs.apiLimit = "";
+    }
+    return apiInputs;
+}
+
+function erasePreviousSearch() {
+    const divImgs = giphContainer.childElementCount;
     //check if there are items from previous search
     if (divImgs > 0) {
         while (giphContainer.firstChild) {
             giphContainer.removeChild(giphContainer.lastChild);
         }
     }
-    //check for text in input
-    if (!querySearch) {
-        return alert("Write in search!");
-    }
+}
+
+submitButton.addEventListener("click", () => {
+    erasePreviousSearch()
+    checkInputs()
     //Gif API
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${querySearch}&limit=&offset=0&rating=g&lang=en`)
-        .then(response => response.json())
-        .then(giphData => {
-            let giphsNum = giphData.data.length;
-            console.log(giphsNum);
-            giphData.data.forEach(giph => {
-                let thisSource = giph.images.original.url;
-                showGiph(thisSource)
-            });
-        });
+    fetchApi(apiInputs.querySearch, apiInputs.apiLimit);
 })
 
 giphLimit.addEventListener("keyup", () => {
-    let divImgs = giphContainer.childElementCount;
-    let querySearch = userSearch.value;
-    let limitNum = giphLimit.value;
-    let giph = giphContainer.children;
-    //check for text in input
-    if (!querySearch) {
-        return alert("Write in search!");
-        //check for empty input    
-    } else if (!limitNum) {
-        limitNum = divImgs;
-        displayNChild(giph, limitNum, divImgs);
-    } else {
-        displayNChild(giph, limitNum, divImgs);
+    erasePreviousSearch()
+    checkInputs()
+    //Gif API
+    fetchApi(apiInputs.querySearch, apiInputs.apiLimit);
+})
+
+userSearch.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        erasePreviousSearch()
+        checkInputs()
+        //Gif API
+        fetchApi(apiInputs.querySearch, apiInputs.apiLimit);
     }
 })
+
 
 
 

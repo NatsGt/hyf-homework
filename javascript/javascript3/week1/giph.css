@@ -46,6 +46,13 @@ h1 {
   margin: 1.5rem 0;
 }
 
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
 .giphs-container {
   display: flex;
   flex-direction: column;
@@ -88,4 +95,10 @@ button:focus {
 .giph-button:hover {
   cursor: pointer;
   background-color: #91d18bd3;
+}
+
+@media screen and (min-width: 1000px) {
+  .inputs-container {
+    flex-direction: row;
+  }
 }
