@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="weather.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="spacing">
+      <input
+        type="text"
+        name="location"
+        id="location"
+        placeholder="Add a city name"
+      />
+      <button type="submit" id="submit-city" class="weather-button">
+        Submit
+      </button>
+      <button type="submit" id="user-location" class="weather-button">
+        Get your location
+      </button>
+      <button type="submit" id="clear-history" class="weather-button">
+        Clear city history
+      </button>
+    </nav>
+    <div class="main-page">
+      <div class="container hide">
+        <div class="weather spacing"></div>
+        <div id="map"></div>
+      </div>
+    </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj6hoJXyAgti0t1IUnPX3duS2vtvOEsN8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <script src="weather.js"></script>
+  </body>
+</html>

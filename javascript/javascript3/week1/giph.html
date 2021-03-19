@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="giph.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Giphy searcher</h1>
+      <div class="inputs-container">
+        <input
+          type="text"
+          name="giphSearch"
+          id="giph-search"
+          class="giph-input"
+          placeholder="Search*"
+        />
+        <input
+          type="number"
+          name="giphLimit"
+          id="giph-limit"
+          class="giph-input"
+          placeholder="Number"
+        />
+        <button type="submit" id="submit" class="giph-button">
+          Show Giphs
+        </button>
+      </div>
+
+      <div class="giphs-container"></div>
+    </div>
+    <!--JS Link-->
+    <script src="giph.js"></script>
+  </body>
+</html>
