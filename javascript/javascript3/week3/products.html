@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="products.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,500"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="welcome">
+        <h2>Welcome</h2>
+      </div>
+      <select name="currency" id="currency">
+        <option disabled selected="selected">Select your currency</option>
+        <option value="USD">Dollar</option>
+        <option value="EUR">Eur</option>
+        <option value="DKK">DKK</option>
+      </select>
+    </nav>
+    <div class="main-container">
+      <div class="shopping-cart">
+        <h1 class="main-title">Your Shopping Cart</h1>
+        <div class="product-list"></div>
+      </div>
+      <div class="specifications">
+        <h3 class="spec-title">Product's Specifications</h3>
+        <form autocomplete="off">
+          <div class="autocomplete" style="width: 300px">
+            <input
+              id="searchProduct"
+              type="text"
+              name="searchProduct"
+              placeholder="Product"
+            />
+          </div>
+        </form>
+        <div class="one-product"></div>
+      </div>
+    </div>
+
+    <script src="products.js"></script>
+  </body>
+</html>

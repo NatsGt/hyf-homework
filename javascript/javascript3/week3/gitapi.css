@@ -1,0 +1,62 @@
+/*
+COLORS
+Lightblue: #9CDAF1
+Blue: #7DBBE6
+Black:#211F1F
+Pink: #AD5C51
+
+FONTS
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #211f1f;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #7dbbe6;
+}
+
+.repos-list {
+  width: 80%;
+}
+
+.owner-ul {
+  border: solid 0.5px #9cdaf1;
+  margin: 20px 0;
+  padding: 10px 0;
+  background-color: white;
+}
+
+.owner {
+  padding: 10px;
+  width: 100%;
+  list-style: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+.repos-ul {
+  padding: 0 40px;
+}
+
+li.repos-list {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.repos-list a:hover {
+  cursor: pointer;
+  color: #ad5c51;
+}
