@@ -1,11 +1,7 @@
-//window dimensions
-const winWidth = window.innerWidth;
-const winHeight = window.innerHeight;
-
 //canvas
 const canvas = document.querySelector(".my-canvas");
-canvas.width = winWidth;
-canvas.height = winHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 //1. Paint a circle
@@ -59,9 +55,9 @@ function getColor() {
 }
 
 function getRandomValues() {
-    circValues.x = Math.floor(Math.random() * winWidth);
-    circValues.y = Math.floor(Math.random() * winHeight);
-    circValues.r = Math.floor(Math.random() * (winWidth / 10));
+    circValues.x = Math.floor(Math.random() * window.innerWidth);
+    circValues.y = Math.floor(Math.random() * window.innerHeight);
+    circValues.r = Math.floor(Math.random() * (window.innerWidth / 10));
     circValues.color = getColor();
     return circValues;
 }

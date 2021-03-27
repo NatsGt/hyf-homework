@@ -1,29 +1,40 @@
 //Global Variables
-const myDiv = document.querySelector(".repos-list");
+const reposContainer = document.querySelector(".repos-list");
 
 //functions
 function render(promises) {
     const userRepos = promises.map(promise => promise.items);
-    userRepos.forEach(rep => {
-        //get owners name
-        const myUl = document.createElement("ul");
-        const ownerLi = document.createElement("li");
-        const reposUl = document.createElement("ul");
-        myUl.classList = "owner-ul"
-        ownerLi.classList = "owner";
-        ownerLi.innerHTML = rep[0].owner.login;
-        myUl.appendChild(ownerLi);
-        //list all repos
-        rep.forEach(element => {
-            const reposLi = document.createElement("li");
-            reposLi.innerHTML = `${element.name}: <a href=${element.html_url}>${element.html_url}</a>`
-            reposLi.classList = "repos-list";
-            reposUl.classList = "repos-ul"
-            reposUl.appendChild(reposLi);
-            ownerLi.appendChild(reposUl);
-            myDiv.appendChild(myUl);
-        })
+    userRepos.forEach(repositories => {
+        createReposList(repositories);
     });
+}
+
+function createReposList(repositories) {
+    const ownerLi = document.createElement("li");
+    const mainUl = document.createElement("ul");
+    const reposUl = document.createElement("ul");
+    //repos owner
+    const repositoryOwner = repositories[0].owner.login
+    mainUl.classList = "owner-ul"
+    ownerLi.classList = "owner";
+    ownerLi.innerHTML = repositoryOwner;
+    mainUl.appendChild(ownerLi);
+    //Make list for each repo
+    createOneLi(repositories, reposUl, ownerLi)
+    //Append everyting
+    reposContainer.appendChild(mainUl);
+}
+
+function createOneLi(repositories, parent1, parent2) {
+    repositories.forEach(rep => {
+        const reposLi = document.createElement("li");
+        reposLi.innerHTML = `${rep.name}: <a href=${rep.html_url}>${rep.html_url}</a>`
+        reposLi.classList = "repos-list";
+        parent1.classList = "repos-ul"
+        parent1.appendChild(reposLi);
+        parent2.appendChild(parent1);
+    })
+
 }
 
 function fetchRepo(user) {
