@@ -15,8 +15,8 @@ CREATE TABLE category(
 CREATE TABLE series(
 `id` int unsigned auto_increment NOT NULL PRIMARY KEY,
 `title` varchar(255) NOT NULL,
-`release_date` datetime NOT NULL,
-`end_date` datetime NOT NULL,
+`release_date` date NOT NULL,
+`end_date` date NOT NULL,
 `seasons` int NULL, 
 `category_id` int unsigned NOT NULL,
 constraint `fk_category` foreign key (`category_id`) references `category` (`id`)

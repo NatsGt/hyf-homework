@@ -1,9 +1,13 @@
 use hyf_lesson2;
 
+select *
+from user;
 -- 1
-select id, name, email
+select task.title, user.name, user.email
 from user
-WHERE email LIKE "%@spotify.com";
+join user_task on user.id = user_task.user_id
+join task on task.id = user_task.task_id
+WHERE user.email LIKE "%@spotify.com";
 
 -- 2
 SELECT task.title, user.name, status.name

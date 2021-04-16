@@ -1,8 +1,5 @@
 use hyf_lesson2;
 
-select *
-from task;
-
 -- PART 1
 
 -- 1
@@ -11,7 +8,7 @@ insert into user_task (user_id,task_id) values (11,36);
 
 -- 2
 UPDATE task 
-SET title='Save the world'
+SET title = 'Save the world'
 WHERE id = 21;
 
 -- 3 
@@ -27,7 +24,7 @@ WHERE id = 21;
 -- 5
 UPDATE task
 SET status_id = 3
-WHERE id=21;
+WHERE id = 21;
 
 -- 6
 DELETE 
