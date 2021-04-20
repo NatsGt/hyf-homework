@@ -1,4 +1,4 @@
-CREATE database hyf_meal_sharing_db;
+-- CREATE database hyf_meal_sharing_db;
 
 use hyf_meal_sharing_db;
 
@@ -116,11 +116,11 @@ select *
 from meals
 where price < 50;
 
-select reservations.id, meals.title, meals.max_reservations, SUM(reservations.number_of_guests), (meals.max_reservations - reservations.number_of_guests) AS available_space
+select meals.id, meals.title, meals.max_reservations, SUM(reservations.number_of_guests), (meals.max_reservations - reservations.number_of_guests) AS available_space
 from meals
-join reservations on meals.id = reservations.meal_id
-where meals.max_reservations - reservations.number_of_guests > 0
-group by meals.id;
+left join reservations on meals.id = reservations.meal_id
+group by meals.id
+having meals.max_reservations > SUM(reservations.number_of_guests) OR available_space IS null;
 
 select *
 from meals
