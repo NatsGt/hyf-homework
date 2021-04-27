@@ -1,4 +1,6 @@
--- CREATE database hyf_meal_sharing_db;
+CREATE database hyf_meal_sharing_db;
+
+SET NAMES utf8mb4;
 
 use hyf_meal_sharing_db;
 
@@ -7,9 +9,9 @@ CREATE table `meals`(
 `title` varchar(255) not null,
 `description` text not null,
 `location` varchar(255) not null,
-`when` datetime not null default NOW(),
+`when` datetime not null,
 `max_reservations` int unsigned not null,
-`price` decimal not null,
+`price` decimal(10,2) not null,
 `created_date` date not null default (CURRENT_DATE)
 );
 
@@ -21,7 +23,7 @@ CREATE table `reservations`(
 `contact_phonenumber` varchar(255) null,
 `contact_name` varchar(255) not null,
 `contact_email` varchar(255) not null, 
-foreign key (`meal_id`) references `meals` (`id`)
+constraint `fk_reservations_meal` foreign key (`meal_id`) references `meals` (`id`) on delete set null on update cascade
 );
 
 CREATE table `reviews`(
@@ -31,15 +33,15 @@ CREATE table `reviews`(
 `meal_id` int unsigned not null,
 `stars` int unsigned not null,
 `created_date` date not null default (CURRENT_DATE),
-foreign key (`meal_id`) references `meals` (`id`),
-constraint `stars_chk` check ((`stars` <= 5))
+constraint `fk_reviews_meal` foreign key (`meal_id`) references `meals` (`id`) on delete set null on update cascade
 );
 
 -- meals queries
 select * from meals;
 
-insert into meals (title, description, location, `when`, max_reservations, price, created_date) values ('rice and beans', 'rice, beans, and coconut milk', 'Guatemala', NOW(), 5, 50, CURRENT_DATE);
-insert into meals (title, description, location, `when`, max_reservations, price, created_date) values ('pupusas', 'corn tortilla filled with cheese, pork, or beans', 'El Salvador', NOW(), 10, 20, CURRENT_DATE);
+insert into meals (title, description, location, `when`, max_reservations, price, created_date) 
+values ('rice and beans', 'rice, beans, and coconut milk', 'Guatemala', NOW(), 5, 50, CURRENT_DATE),
+('pupusas', 'corn tortilla filled with cheese, pork, or beans', 'El Salvador', NOW(), 10, 20, CURRENT_DATE);
 
 select *
 from meals
@@ -122,6 +124,13 @@ left join reservations on meals.id = reservations.meal_id
 group by meals.id
 having meals.max_reservations > SUM(reservations.number_of_guests) OR available_space IS null;
 
+-- With coalesce
+select meals.id, meals.title, meals.max_reservations, coalesce(SUM(reservations.number_of_guests), 0) AS made_reservations , coalesce((meals.max_reservations - reservations.number_of_guests), meals.max_reservations)  AS available_space
+from meals
+left join reservations on meals.id = reservations.meal_id
+group by meals.id
+having meals.max_reservations > SUM(reservations.number_of_guests) OR available_space = meals.max_reservations;
+
 select *
 from meals
 where title LIKE "%as";
@@ -147,7 +156,11 @@ order by reservations.created_date asc;
 select meals.id, meals.title, avg(reviews.stars)
 from meals
 join reviews on meals.id = reviews.meal_id
-group by meals.id;
+group by meals.id
+order by avg(reviews.stars) desc;
+
+
+
 
 
 
