@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Indian food in the summer",
+    "maxNumberOfGuests": 5,
+    "description": "A nice night out eating delicious indian food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 67
+  },
+  {
+    "id": 2,
+    "title": "Fresh pasta in Sicily",
+    "maxNumberOfGuests": 10,
+    "description": "Lets eat fresh ravioli pasta and Italian classics",
+    "createdAt": "2020/04/20 10:00",
+    "price": 40
+  },
+  {
+    "id": 3,
+    "title": "Greek Meatballs",
+    "maxNumberOfGuests": 10,
+    "description": "A date cooking Greek baked meatballs and another traditional Greek island side dish",
+    "createdAt": "2020/04/27 17:00",
+    "price": 40
+  }
+]
