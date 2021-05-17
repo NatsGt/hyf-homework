@@ -33,8 +33,8 @@ function Table() {
   return (
     <table className="todo-table">
       <tr>
-        <th>Task</th>
-        <th>Due Date</th>
+        <TableHeader title="Task" />
+        <TableHeader title="Due Date" />
       </tr>
       {myTodo.map(list => {
         return (
@@ -44,6 +44,12 @@ function Table() {
       )}
 
     </table>
+  )
+}
+
+function TableHeader(props) {
+  return (
+    <th>{props.title}</th>
   )
 }
 
