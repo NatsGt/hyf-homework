@@ -1,0 +1,32 @@
+/*
+font-family: 'Bubblegum Sans', cursive;
+font-family: 'Poppins', sans-serif;
+*/
+
+h1 {
+  font-family: "Bubblegum Sans", cursive;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  background-image: url("https://i.pinimg.com/originals/a6/1a/b6/a61ab69461c264dac81d3a12dfebd9ac.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-table {
+  border-spacing: 10px;
+}
+
+td,
+th {
+  padding-left: 15px;
+}
