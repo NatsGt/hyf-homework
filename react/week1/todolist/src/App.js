@@ -1,6 +1,6 @@
 import './App.css';
 
-const myTodo = [
+const myTodoList = [
   {
     id: 1,
     task: "Finish my hyf homework",
@@ -23,22 +23,25 @@ function App() {
     <div className="App">
       <h1>Todo List</h1>
       <div className="container">
-        <Table />
+        <TodoTable />
       </div>
     </div>
   );
 }
 
-function Table() {
+function TodoTable() {
   return (
     <table className="todo-table">
-      <tr>
-        <TableHeader title="Task" />
-        <TableHeader title="Due Date" />
-      </tr>
-      {myTodo.map(list => {
+      <tbody>
+        <tr>
+          <TableHeader title="Task" />
+          <TableHeader title="Due Date" />
+        </tr>
+      </tbody>
+
+      {myTodoList.map(task => {
         return (
-          <Task key={list.id} task={list.task} dueDate={list.dueDate} />
+          <Task key={task.id} task={task.task} dueDate={task.dueDate} />
         )
       }
       )}
@@ -55,10 +58,13 @@ function TableHeader(props) {
 
 function Task(props) {
   return (
-    <tr>
-      <td>{props.task}</td>
-      <td>{props.dueDate}</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>{props.task}</td>
+        <td>{props.dueDate}</td>
+      </tr>
+
+    </tbody>
   )
 }
 export default App;
