@@ -18,7 +18,7 @@ const todos = [
 
 const myTodoList = ["Finish my hyf homework", "Walk the dog", "Do laundry", "Prepare for class"]
 
-function TodoItem(props) {
+function CreateTodo(props) {
     const [todoStatus, setTodoStatus] = useState(true);
     function checkState() {
         setTodoStatus(!todoStatus)
@@ -37,28 +37,39 @@ function TodoItem(props) {
     )
 }
 
-function ListContainer() {
+function TodoListContainer() {
     return (
         <div className="list-container">
             <h1>Todo List</h1>
-            <List />
+            <TodoList />
         </div>
     )
 }
 
-function List() {
-    const [todo, setTodo] = useState(todos)
+function TodoList() {
+    const [todo, setTodo] = useState(todos);
+    const [id, setId] = useState(4);
+    function incrementId() {
+        setId(prev => prev + 1);
+    }
     function addTodo() {
         const randomIndex = Math.floor(Math.random() * myTodoList.length);
-        setTodo(prev => [...prev, {
-            id: prev.length + 1,
-            description: myTodoList[randomIndex]
-        }]);
+        incrementId();
+        setTodo(prev => {
+            return (
+                [...prev, {
+                    id: id,
+                    description: myTodoList[randomIndex]
+                }]
+            )
+        }
+
+        );
     }
     function deleteTodo(itemID) {
         setTodo((prev) => {
             return prev.filter((item, index) => {
-                return index !== itemID
+                return item.id !== itemID
             });
         })
     }
@@ -66,7 +77,7 @@ function List() {
         <div>
             {todo.length === 0 && <p>No items</p>}
             <ul>
-                {todo.map((item, index) => <TodoItem key={item.id} description={item.description} deleteMethod={deleteTodo} id={index} />)}
+                {todo.map((item, index) => <CreateTodo key={item.id} description={item.description} deleteMethod={deleteTodo} id={item.id} />)}
             </ul>
             <div className="add-button-container">
                 <button onClick={addTodo} className="add-button">Add todo</button>
@@ -88,7 +99,7 @@ export default function App() {
     return (
         <div className="App">
             <Counter />
-            <ListContainer />
+            <TodoListContainer />
         </div>
     );
 }
