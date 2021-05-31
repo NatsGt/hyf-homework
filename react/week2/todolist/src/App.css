@@ -1,0 +1,83 @@
+/*
+light pink: #faf3f3,
+light blue: #e1e5ea,
+blue: #a7bbc7,
+pink: #da7f8f
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  background-color: #da7f8f;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container {
+  background-color: #faf3f3;
+  width: 75%;
+  margin: 3rem;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  padding: 2px 0;
+}
+
+.todo-item:last-child {
+  border-bottom: 1px solid #a7bbc7;
+}
+
+.item-description {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  background-color: #e1e5ea;
+  padding: 1px 10px;
+  border-radius: 12px;
+  border-color: #e1e5ea;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #a7bbc7;
+  border-color: #a7bbc7;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 0;
+}
+
+.add-button {
+  background-color: #da7f8f;
+  border-color: #da7f8f;
+}
+
+.add-button:hover {
+  background-color: #d16377;
+  border-color: #d16377;
+}
