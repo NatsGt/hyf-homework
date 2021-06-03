@@ -49,34 +49,33 @@ function DescriptionInput(props) {
     return (
         <div>
             <label>Description</label>
-            <input onChange={(e) => props.changeMethod(e.target)} type="text" name="description" value={props.value} ></input>
+            <input className="description-input" onChange={(e) => props.changeMethod(e.target, 'description')} type="text" name="description" value={props.value} autoComplete="off"></input>
         </div>
     )
 }
 
 function DeadlineInput(props) {
-    return (
-        <div>
-            <label>Duedate</label>
-            <input type="date" onChange={(e) => props.changeMethod(e.target)} name="deadline" value={props.value} placeholder="Select due date"></input>
-        </div>
-    )
+    const [startDate, setStartDate] = useState(null);
+    const date = new Date();
 
-    /*
-    const [startDate, setStartDate] = useState(new Date());
     return (
-        { <DatePicker
+        <DatePicker
+            placeholderText="Click to select a date"
             closeOnScroll={true}
             selected={startDate}
-            onChange={(date) =>
+            onChange={(date) => {
                 setStartDate(date)
+                props.changeMethod(date, 'date')
+            }
             }
             name="deadline"
-            value={startDate}
-        /> }
-        
-        )*/
-    /*props.changeMethod(date)  value={props.value}*/
+            value={props.value}
+            minDate={date}
+            openToDate={date}
+            className="date-input"
+            autoComplete="off"
+        />
+    )
 }
 
 function TodoForm(props) {
@@ -84,29 +83,38 @@ function TodoForm(props) {
         description: "",
         deadline: ""
     });
-
-    function setNewInput(inputValue) {
-        const { name, value } = inputValue;
-        setInputTodo((prev) => {
-            return ({ ...prev, [name]: value })
-        })
+    function setNewInput(inputValue, inputName) {
+        if (inputName === 'date') {
+            setInputTodo((prev) => {
+                return ({ ...prev, deadline: inputValue.getFullYear() + "-" + ((inputValue.getMonth() < 10) ? "0" : "") + (inputValue.getMonth() + 1) + "-" + ((inputValue.getDate() < 10) ? "0" : "") + inputValue.getDate() })
+            })
+        } else if (inputName === 'description') {
+            const { name, value } = inputValue;
+            setInputTodo((prev) => {
+                return ({ ...prev, [name]: value })
+            })
+        }
     }
 
     const { addMethod } = props
     return (
-        <div className="inputs-container">
-            <DescriptionInput changeMethod={setNewInput} value={inputTodo.description} />
-            <DeadlineInput changeMethod={setNewInput} value={inputTodo.deadline} />
-            <div className="add-button-container">
-                <button onClick={() => {
-                    addMethod(inputTodo)
-                    setInputTodo({
-                        description: "",
-                        deadline: ""
-                    })
-                }} className="add-button">Add todo</button>
+        <div className="add-todo-container">
+            <h3>Add a todo</h3>
+            <div className="inputs-container">
+                <DescriptionInput changeMethod={setNewInput} value={inputTodo.description} />
+                <DeadlineInput changeMethod={setNewInput} value={inputTodo.deadline} />
+                <div className="add-button-container">
+                    <button onClick={() => {
+                        addMethod(inputTodo)
+                        setInputTodo({
+                            description: "",
+                            deadline: null
+                        })
+                    }} className="add-button">Add todo</button>
+                </div>
             </div>
         </div>
+
     )
 }
 
@@ -122,12 +130,13 @@ function TodoListContainer() {
     function incrementId() {
         setId(prev => prev + 1);
     }
+
     function addTodo(newTodo) {
         let { description, deadline } = newTodo
         if (description.length === 0) {
             description = undefined;
         }
-        if (deadline.length === 0) {
+        if (deadline === "") {
             alert("Set a valid due date")
             return
         }

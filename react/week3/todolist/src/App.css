@@ -14,7 +14,8 @@ font-family: 'Poppins', sans-serif;
 }
 
 body,
-input {
+input,
+button {
   font-family: "Poppins", sans-serif;
 }
 
@@ -43,12 +44,30 @@ input {
   display: flex;
 }
 
-.inputs-container {
+.add-todo-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.inputs-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/*Input*/
+
+.description-input {
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 1px #a7bbc7;
 }
 
 /*Todo List*/
@@ -121,6 +140,9 @@ button:hover {
 }
 
 .add-button {
+  position: absolute;
+  right: 0;
+  top: 0;
   background-color: #95e34f;
   border-color: #95e34f;
 }
