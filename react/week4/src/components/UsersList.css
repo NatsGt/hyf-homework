@@ -1,0 +1,45 @@
+.background {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+}
+
+.users-result-container {
+  margin: 20px 0;
+  width: 50%;
+  background-color: #fff;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #e1e4e8;
+  border-radius: 12px;
+}
+
+.user-list-title {
+  text-transform: uppercase;
+}
+
+.user-name-list {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.user-name {
+  list-style: none;
+}
+
+.error-text {
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: crimson;
+}
