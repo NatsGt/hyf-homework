@@ -18,7 +18,7 @@ function SearchInput() {
     )
 }
 
-function NavBar() {
+function SearchBar() {
     return (
         <div className="search-container">
             <h1><FontAwesomeIcon icon={['fab', 'github']} /> GitHub Users</h1>
@@ -28,5 +28,5 @@ function NavBar() {
 }
 
 export default function UsersSearch() {
-    return <NavBar />
+    return <SearchBar />
 }
