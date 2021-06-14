@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { UserProvider } from './UserContext';
 import UsersSearch from './UsersSearch';
 import UsersList from './UsersList';
+import useDebounce from "./UseDebounce";
 
 export default function UsersFetch() {
-    const [users, setUsers] = useState("")
-    const [result, setResult] = useState([{ id: 1, login: "No result" }]);
+    const [user, setUser] = useState("")
+    const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const debounceQuery = useDebounce(user);
 
     useEffect(() => {
         async function fetchApi(query) {
             if (query.length === 0) {
-                setResult(() => [{ id: 1, login: "No result" }])
+                setResult([]);
                 return
             }
             setLoading(true);
@@ -20,7 +22,7 @@ export default function UsersFetch() {
             if (data.ok) {
                 const apiResult = await data.json()
                 const userList = await apiResult.items
-                setResult(() => userList)
+                setResult(userList)
                 setError("")
             } else {
                 const errorResult = await data.json();
@@ -28,15 +30,13 @@ export default function UsersFetch() {
             }
             setLoading(false)
         }
-        fetchApi(users);
-    }, [users])
+        fetchApi(debounceQuery);
+    }, [debounceQuery])
 
     return (
         <div>
-            <UserProvider value={{ users, setUsers }}>
+            <UserProvider value={{ user, setUser, result, setResult, loading, error }}>
                 <UsersSearch />
-            </UserProvider>
-            <UserProvider value={{ result, loading, error }} >
                 <UsersList />
             </UserProvider>
         </div>

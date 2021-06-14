@@ -1,4 +1,4 @@
-.background {
+.render-result-container {
   width: 100%;
   min-height: 100vh;
   background-color: #f1f1f1;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.users-result-container {
+.render-result-box {
   margin: 20px 0;
   width: 50%;
   background-color: #fff;
@@ -22,7 +22,7 @@
   text-transform: uppercase;
 }
 
-.user-name-list {
+.result-list {
   padding-top: 15px;
   text-align: center;
 }
