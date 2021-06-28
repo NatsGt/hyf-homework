@@ -5,3 +5,4 @@ lettuce
 spinach
 carrot
 onion
+asparragus
