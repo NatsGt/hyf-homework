@@ -1,5 +1,7 @@
 celery
 brocoli
-cabbage
+cauliflower
 lettuce
 spinach
+carrot
+onion
