@@ -6,3 +6,4 @@ spinach
 carrot
 onion
 asparragus
+red pepper
