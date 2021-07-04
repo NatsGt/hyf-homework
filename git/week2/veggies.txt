@@ -4,3 +4,4 @@ asparragus
 lettuce
 spinach
 red pepper
+turnip
