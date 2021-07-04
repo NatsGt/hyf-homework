@@ -1,10 +1,7 @@
 celery
 brocoli
-cauliflower
+asparragus
 lettuce
 spinach
-carrot
-onion
-asparragus
 red pepper
 turnip
